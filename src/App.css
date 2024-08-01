@@ -1,16 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .App {
-  margin-top: 50px;
   text-align: center;
+  background-color: black;
 }
 
 .title {
-  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 500px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.secondary{
+  font-size: 20px;
+  font-weight: 300px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  /* Ensure content is wider than the wrapper to see the sliding effect */
+  width: 400%; /* Adjust based on the number of cards and their width */
+  transition: transform 70s linear;
+  height: 600px;
 }
 
 .image_wrapper {
-  margin: 0px 30px;
+  display: inline-block;
+  width: 250px; /* Width of the card */
+  height: 300px; /* Height of the card */
+  margin: 0 20px; /* Adjust spacing between cards */
+  background-color: rgb(19, 18, 18); /* Card background color */
+  border: 1px solid #2e2c2c; /* Card border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center;
+ /* Center text vertically */
+  font-size: 24px; /* Text size for the card content */
+  color: #333; /* Text color */
+  transform: translateY(0); /* Initial position */
+
 }
 
-.image_wrapper img {
-  width: 80%;
+/* Keyframes for smooth bounce-up animation */
+@keyframes bounce-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px); /* Adjust the height of the bounce */
+  }
+ 
+}
+
+/* Keyframes for smooth bounce-down animation */
+@keyframes bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px); /* Adjust the height of the bounce */
+  }
+
+}
+
+@keyframes bounce-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px); /* Adjust as needed */
+  }
+}
+
+@keyframes bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px); /* Adjust as needed */
+  }
+}
+
+.bounce-up {
+  animation: bounce-up 5s ease-in-out infinite;
+}
+
+.bounce-down {
+  animation: bounce-down 5s ease-in-out infinite;
+}
+
+/* Animation delay class */
+.marquee-content.animate {
+  animation: slide-left 30s linear ease-in-out;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+.author-image {
+  height: 2.5rem; /* Equivalent to h-10 */
+  width: 2.5rem; /* Equivalent to w-10 */
+  border-radius: 50%; /* Equivalent to rounded-full */
+  background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.author-name {
+  font-weight: 200; /* Equivalent to font-semibold */
+  color: white;
+  padding-top: 10px;
+  
+}
+
+.author-handle {
+  color: white; /* Equivalent to text-gray-600 */
+  padding: 10px;
+}
+.author-details {
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.author-handle {
+  color: white; /* Equivalent to text-gray-600 */
+  word-wrap: break-word; /* Ensure text wraps within the container */
+  white-space: normal; /* Allow text to wrap to next line */
+  font-size: 18px;
+  font-weight: 300px;
+}
+
+.bounce-up {
+  animation: bounce-up 10s ease-in-out infinite;
+}
+
+.bounce-down {
+  animation: bounce-down 10s ease-in-out infinite;
+}
+
+@keyframes bounce-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px); /* Adjust as needed */
+  }
+}
+
+@keyframes bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px); /* Adjust as needed */
+  }
 }
